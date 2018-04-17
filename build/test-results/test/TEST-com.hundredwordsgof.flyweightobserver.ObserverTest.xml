@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hundredwordsgof.flyweightobserver.ObserverTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-04-17T23:46:36" hostname="Scotts-MacBook-Air.local" time="0.007">
+  <properties/>
+  <testcase name="newTests1()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
+  <testcase name="newTests2()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
+  <testcase name="testObserver()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
+  <testcase name="testDettach()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
