@@ -49,7 +49,7 @@ public class ObserverTest {
   public void newTests1() {
 	FlyweightSubjectFactory fwSFactory = new FlyweightSubjectFactory();
 	
-	FlyweightSubject subject = (FlyweightSubject) fwSFactory.getSubject("ObserverTest", "testSubject");
+	FlyweightSubject subject = (FlyweightSubject) fwSFactory.getSubject("unsharedObserverTest", "testSubject");
 	
 	UnSharedFlyweightObserver observer1 = new UnSharedFlyweightObserver(subject);
 	UnSharedFlyweightObserver observer2 = new UnSharedFlyweightObserver(subject);
@@ -72,7 +72,7 @@ public class ObserverTest {
   public void newTests2() {
 	FlyweightSubjectFactory fwSFactory = new FlyweightSubjectFactory();
 	
-	FlyweightSubject subject = (FlyweightSubject) fwSFactory.getSubject("ObserverTest", "testSubject");
+	FlyweightSubject subject = (FlyweightSubject) fwSFactory.getSubject("unsharedObserverTest", "testSubject");
 	
 	UnSharedFlyweightObserver observer1 = new UnSharedFlyweightObserver(subject);
 	UnSharedFlyweightObserver observer2 = new UnSharedFlyweightObserver(subject);
@@ -86,5 +86,47 @@ public class ObserverTest {
 	assertEquals(((FlyweightObserver) observer1).getWhatObserverKnows(), ((FlyweightObserver) observer3).getWhatObserverKnows());
 	assertEquals(((FlyweightObserver) observer1).getWhatObserverKnows(), ((FlyweightObserver) observer2).getWhatObserverKnows());
 	assertEquals(((FlyweightObserver) observer3).getWhatObserverKnows(), ((FlyweightObserver) observer2).getWhatObserverKnows());
+  }
+  
+  // Testing that the update method does update the individual observers
+  @Test
+  public void newTests3() {
+	FlyweightSubjectFactory fwSFactory = new FlyweightSubjectFactory();
+		
+	FlyweightSubject subject = (FlyweightSubject) fwSFactory.getSubject("unsharedObserverTest", "testSubject");
+	
+	UnSharedFlyweightObserver observer1 = new UnSharedFlyweightObserver(subject);
+	UnSharedFlyweightObserver observer2 = new UnSharedFlyweightObserver(subject);
+	UnSharedFlyweightObserver observer3 = new UnSharedFlyweightObserver(subject);
+	subject.setState(1);
+	subject.attach(observer1);
+	subject.attach(observer2);
+	subject.attach(observer3);
+	observer1.update();
+	observer2.update();
+	assertNotEquals(((FlyweightObserver) observer1).getWhatObserverKnows(), ((FlyweightObserver) observer3).getWhatObserverKnows());
+	observer3.update();
+	
+	assertEquals(((FlyweightObserver) observer1).getWhatObserverKnows(), ((FlyweightObserver) observer3).getWhatObserverKnows());
+	assertEquals(((FlyweightObserver) observer1).getWhatObserverKnows(), ((FlyweightObserver) observer3).getWhatObserverKnows());
+	assertEquals(((FlyweightObserver) observer1).getWhatObserverKnows(), ((FlyweightObserver) observer3).getWhatObserverKnows());
+  }
+  
+  // Testing that update perpetuates through all shared flyweight subjects with the same key
+  @Test
+  public void newTests4() {
+	FlyweightSubjectFactory fwSFactory = new FlyweightSubjectFactory();
+	
+	FlyweightSubject subject1 = (FlyweightSubject) fwSFactory.getSubject("sharedObserverTest", "testSubject");
+	
+	SharedFlyweightObserver observer1 = new SharedFlyweightObserver(subject1);
+	
+	subject1.attach(observer1);
+	subject1.setState(1);
+	
+	FlyweightSubject subject2 = (FlyweightSubject) fwSFactory.getSubject("sharedObserverTest", "testSubject");
+	
+	assertEquals(subject1.getState(), subject2.getState());
+	
   }
 }
