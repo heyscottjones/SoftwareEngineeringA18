@@ -44,6 +44,7 @@ public class ObserverTest {
     assertEquals(1, ((FlyweightObserver) observer).getWhatObserverKnows());
   }
   
+  
   // Testing that multiple observers are updated when the setState method (which contains notifyObservers)
   @Test
   public void newTests1() {
@@ -127,6 +128,5 @@ public class ObserverTest {
 	FlyweightSubject subject2 = (FlyweightSubject) fwSFactory.getSubject("sharedObserverTest", "testSubject");
 	
 	assertEquals(subject1.getState(), subject2.getState());
-	
   }
 }

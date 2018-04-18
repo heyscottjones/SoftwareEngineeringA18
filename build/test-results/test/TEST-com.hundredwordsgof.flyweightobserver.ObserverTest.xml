@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.hundredwordsgof.flyweightobserver.ObserverTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-18T00:19:01" hostname="Scotts-MacBook-Air.local" time="0.012">
+<testsuite name="com.hundredwordsgof.flyweightobserver.ObserverTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2018-04-18T00:31:45" hostname="Scotts-MacBook-Air.local" time="0.014">
   <properties/>
   <testcase name="newTests1()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
-  <testcase name="newTests2()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
-  <testcase name="newTests3()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.0"/>
+  <testcase name="newTests2()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.0"/>
+  <testcase name="newTests3()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
   <testcase name="newTests4()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.002"/>
-  <testcase name="testObserver()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.0"/>
+  <testcase name="testObserver()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
   <testcase name="testDettach()" classname="com.hundredwordsgof.flyweightobserver.ObserverTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

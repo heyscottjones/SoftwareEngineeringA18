@@ -82,6 +82,7 @@ public class FlyweightTest {
     }
   }
   
+  
   // Testing that, when using setState with an observer attached, both the subject and the object are updated with the int
   @Test
   public void newTest1() {
